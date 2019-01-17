@@ -62,7 +62,7 @@ eval "$(docker-machine env default)"
 Clone Repository
 
 ```
-git clone git@github.com:marcelbirkner/docker-ci-tool-stack.git
+git clone git@github.com:yogendra/docker-ci-tool-stack.git
 cd docker-ci-tool-stack
 ```
 
@@ -112,7 +112,7 @@ Clone Repository
 git clone https://github.com/yogendra/docker-ci-tool-stack.git
 
 # Option B: if you have your ssh keys configured for your GitHub account
-git clone git@github.com:marcelbirkner/docker-ci-tool-stack.git
+git clone git@github.com:yogendra/docker-ci-tool-stack.git
 
 cd docker-ci-tool-stack
 ```

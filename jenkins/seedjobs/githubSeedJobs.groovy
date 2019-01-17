@@ -1,4 +1,4 @@
-def githubApi = new URL("https://api.github.com/users/marcelbirkner/repos")
+def githubApi = new URL("https://api.github.com/users/yogendra/repos")
 def projects = new groovy.json.JsonSlurper().parse(githubApi.newReader())
 
 projects.each {
