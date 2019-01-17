@@ -66,7 +66,6 @@ git clone git@github.com:marcelbirkner/docker-ci-tool-stack.git
 cd docker-ci-tool-stack
 ```
 
-
 # With Docker Mac Native
 
 If you want to use new Docker Mac Native implementation without VirtualBox and Docker Toolbox, follow these steps:
@@ -75,7 +74,7 @@ If you want to use new Docker Mac Native implementation without VirtualBox and D
 
 Install Docker Mac Native (https://docs.docker.com/docker-for-mac/)[https://docs.docker.com/docker-for-mac/] and if you had Toolbox before, make sure to follow these steps here https://docs.docker.com/docker-for-mac/docker-toolbox/
 
-or install via __brew update__ & __brew cask install docker --force__ .
+or install via **brew update** & **brew cask install docker --force** .
 
 If everything went fine, docker --version should give something like this (or a higher version number):
 
@@ -91,13 +90,13 @@ If there´s also docker-machine on your machine, don´t forget to do the mention
 
 ### Step 1 - Create needed osxfs mountpoints
 
-Create folders (see [Issue 26](https://github.com/marcelbirkner/docker-ci-tool-stack/issues/26))
+Create folders (see [Issue 26](https://github.com/yogendra/docker-ci-tool-stack/issues/26))
 
-* /opt/jenkins via __sudo mkdir /opt/jenkins__
-* /opt/postgres via __sudo mkdir /opt/postgres__
-* /opt/gitlab via __sudo mkdir /opt/gitlab__
+- /opt/jenkins via **sudo mkdir /opt/jenkins**
+- /opt/postgres via **sudo mkdir /opt/postgres**
+- /opt/gitlab via **sudo mkdir /opt/gitlab**
 
-Change the owning user to your account, e.g. via __sudo chown yourUserName gitlab/__
+Change the owning user to your account, e.g. via **sudo chown yourUserName gitlab/**
 
 Then configure these folders in Docker / Preferences / File Sharing:
 
@@ -110,7 +109,7 @@ Clone Repository
 ```
 # Clone Repository and startup all docker container
 # Option A: clone via https
-git clone https://github.com/marcelbirkner/docker-ci-tool-stack.git
+git clone https://github.com/yogendra/docker-ci-tool-stack.git
 
 # Option B: if you have your ssh keys configured for your GitHub account
 git clone git@github.com:marcelbirkner/docker-ci-tool-stack.git
@@ -120,7 +119,7 @@ cd docker-ci-tool-stack
 
 # Getting started
 
-To get all docker containers up and running, in __docker-ci-tool-stack__ use:
+To get all docker containers up and running, in **docker-ci-tool-stack** use:
 
 ```
 docker-compose up
@@ -131,7 +130,7 @@ docker-compose up
 ### Automatically
 
 Please run **docker-compose.yml.native-docker-fix.sh** before executing **docker-compose up**.
-This will fix the Docker binary PATH, see [Issue 24](https://github.com/marcelbirkner/docker-ci-tool-stack/issues/24).
+This will fix the Docker binary PATH, see [Issue 24](https://github.com/yogendra/docker-ci-tool-stack/issues/24).
 This script patches the docker-compose.yml.
 
 ### Manually
@@ -144,30 +143,30 @@ to
 
 - /usr/bin/docker:/usr/bin/docker
 
-This is because '/usr/bin/docker' is the docker binary, see [Issue 24](https://github.com/marcelbirkner/docker-ci-tool-stack/issues/24).
+This is because '/usr/bin/docker' is the docker binary, see [Issue 24](https://github.com/yogendra/docker-ci-tool-stack/issues/24).
 
 ## Access Tools
 
 #### With docker machine
 
-| *Tool* | *Link* | *Credentials* |
-| ------------- | ------------- | ------------- |
-| Jenkins | http://${docker-machine ip default}:18080/ | no login required |
-| SonarQube | http://${docker-machine ip default}:19000/ | admin/admin |
-| Nexus | http://${docker-machine ip default}:18081/nexus | admin/admin123 |
-| GitLab | http://${docker-machine ip default}/ | root/5iveL!fe |
-| Selenium Grid | http://${docker-machine ip default}:4444/grid/console | no login required |
+| _Tool_         | _Link_                                                    | _Credentials_     |
+| -------------- | --------------------------------------------------------- | ----------------- |
+| Jenkins        | http://${docker-machine ip default}:18080/                | no login required |
+| SonarQube      | http://${docker-machine ip default}:19000/                | admin/admin       |
+| Nexus          | http://${docker-machine ip default}:18081/nexus           | admin/admin123    |
+| GitLab         | http://${docker-machine ip default}/                      | root/5iveL!fe     |
+| Selenium Grid  | http://${docker-machine ip default}:4444/grid/console     | no login required |
 | Conference App | http://${docker-machine ip default}:48080/currentSessions | no login required |
 
 #### With Docker Mac Native
 
-| *Tool* | *Link* | *Credentials* |
-| ------------- | ------------- | ------------- |
-| Jenkins | http://localhost:18080/ | no login required |
-| SonarQube | http://localhost:19000/ | admin/admin |
-| Nexus | http://localhost:18081/nexus | admin/admin123 |
-| GitLab | http://localhost | root/5iveL!fe |
-| Selenium Grid | http://localhost:4444/grid/console | no login required |
+| _Tool_         | _Link_                                 | _Credentials_     |
+| -------------- | -------------------------------------- | ----------------- |
+| Jenkins        | http://localhost:18080/                | no login required |
+| SonarQube      | http://localhost:19000/                | admin/admin       |
+| Nexus          | http://localhost:18081/nexus           | admin/admin123    |
+| GitLab         | http://localhost                       | root/5iveL!fe     |
+| Selenium Grid  | http://localhost:4444/grid/console     | no login required |
 | Conference App | http://localhost:48080/currentSessions | no login required |
 
 ## Screenshots
