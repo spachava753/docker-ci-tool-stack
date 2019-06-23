@@ -1,3 +1,6 @@
+all: clean build up
+.PHONY: all
+
 clean:
 	docker-compose down -v --remove-orphans
 up:

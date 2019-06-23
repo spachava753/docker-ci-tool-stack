@@ -224,10 +224,19 @@ eval $(docker-machine env docker-ci-v1)
 
 # Usage:
 
+To run everything in order, just do:
+```
+make
+```
+
 ## Build the images
 ```
 docker-compose -f docker-compose-selenium.yml build
 docker-compose build
+
+# or
+
+make build
 ```
 
 ## Running
@@ -235,6 +244,10 @@ docker-compose build
 ```
 docker-compose -f docker-compose-selenium.yml up -d
 docker-compose up -d
+
+# or
+
+make up
 ```
 
 ## Cleaning up
@@ -247,6 +260,10 @@ docker-compose down
 
 docker-compose -f docker-compose-selenium.yml down -v
 docker-compose down -v
+
+# or
+
+make clean
 ```
 
 # Problems encountered
