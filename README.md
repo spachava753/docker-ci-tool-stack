@@ -248,3 +248,13 @@ docker-compose down
 docker-compose -f docker-compose-selenium.yml down -v
 docker-compose down -v
 ```
+
+# Problems encountered
+
+- plugins were outdated
+- plugin dependencies not installed
+- plugin updates available on startup
+- jdk installtion directory was configured incorrectly in jenkins/config/config.xml
+- maven global condig settings file was incorrectly configured
+- sonarqube html plugin is preventing startup
+- vm.max_map_count value is too low on docker host machine
