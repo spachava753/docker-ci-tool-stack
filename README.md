@@ -220,3 +220,31 @@ docker-machine create --driver virtualbox --virtualbox-memory 6000 docker-ci-v1
 # Configure shell environment
 eval $(docker-machine env docker-ci-v1)
 ```
+
+
+# Usage:
+
+## Build the images
+```
+docker-compose -f docker-compose-selenium.yml build
+docker-compose build
+```
+
+## Running
+
+```
+docker-compose -f docker-compose-selenium.yml up -d
+docker-compose up -d
+```
+
+## Cleaning up
+
+```
+docker-compose -f docker-compose-selenium.yml down
+docker-compose down
+
+# to clean up the volumes as well
+
+docker-compose -f docker-compose-selenium.yml down -v
+docker-compose down -v
+```
