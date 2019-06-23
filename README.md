@@ -258,3 +258,15 @@ docker-compose down -v
 - maven global condig settings file was incorrectly configured
 - sonarqube html plugin is preventing startup
 - vm.max_map_count value is too low on docker host machine
+
+# Solutions
+
+- update plugin.txt to have the tags 'latest'
+- change the jdk installation directory in jenkins/config/config.xml
+- comment out sonarqube html plugin preventing startup
+- set vm.max_map_count value higher on docker host machine
+
+# Changes
+
+- add Makefile to run commands easier
+- consolidate the two compose files into one

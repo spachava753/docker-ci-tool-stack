@@ -5,6 +5,7 @@ networks:
     driver: bridge
 
 services:
+# Nexus
   nexus:
     # build: ./nexus
     image: sonatype/nexus:latest
@@ -14,7 +15,7 @@ services:
       - nexus-data:/nexus-data
     networks:
       - prodnetwork
-
+# Sonar
   sonar:
     build: ./sonar
     ports:
@@ -41,7 +42,7 @@ services:
     volumes:
       - sonardb-data:/var/lib/postgresql/data
       - sonardb:/var/lib/postgresql
-
+# Jenkins
   jenkins:
     build: ./jenkins
     ports:
@@ -59,6 +60,30 @@ services:
       - NEXUS_PORT=8081
       - SONAR_PORT=9000
       - SONAR_DB_PORT=5432
+# Selenium
+  seleniumhub:
+    image: selenium/hub
+    ports:
+      - "4444:4444"
+    networks:
+      - prodnetwork
+  firefox:
+    image: selenium/node-firefox
+    depends_on:
+      - seleniumhub
+    environment:
+      - HUB_PORT_4444_TCP_ADDR=seleniumhub
+    networks:
+      - prodnetwork
+  chrome:
+    image: selenium/node-chrome
+    depends_on:
+      - seleniumhub
+    environment:
+      - HUB_PORT_4444_TCP_ADDR=seleniumhub
+    networks:
+      - prodnetwork
+
 
 volumes:
   nexus-data:
