@@ -275,6 +275,8 @@ make clean
 - maven global condig settings file was incorrectly configured
 - sonarqube html plugin is preventing startup
 - vm.max_map_count value is too low on docker host machine
+- upgrade nexus2 to nexus3 and import repositories
+- update global
 
 # Solutions
 

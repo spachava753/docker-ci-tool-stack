@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<org.jenkinsci.plugins.configfiles.maven.DefaultGlobalMavenSettingsProvider plugin="config-file-provider@2.10.0">
+<org.jenkinsci.plugins.configfiles.maven.DefaultGlobalMavenSettingsProvider plugin="config-file-provider@latest">
   <configs>
     <entry>
       <string>org.jenkinsci.plugins.configfiles.maven.GlobalMavenSettingsConfig1435422191538</string>
@@ -56,7 +56,7 @@
         &lt;pluginRepository&gt;
           &lt;id&gt;central&lt;/id&gt;
           &lt;url&gt;http://central&lt;/url&gt;
-          &lt;releases&gt;&lt;enabled&gt;true&lt;/enabled&gt;&lt;/releases&gt;
+          &lt;releases&gt;  &lt;enabled&gt;true&lt;/enabled&gt;&lt;/releases&gt;
           &lt;snapshots&gt;&lt;enabled&gt;true&lt;/enabled&gt;&lt;/snapshots&gt;
         &lt;/pluginRepository&gt;
       &lt;/pluginRepositories&gt;
